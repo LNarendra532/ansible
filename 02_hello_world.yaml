@@ -1,0 +1,12 @@
+- name: Hello world
+  hosts: local
+  connection: local # no need of user name and password
+  tasks:
+  - name: print the message
+    ansible.builtin.debug:
+      msg: "Hello world"
+  
+
+
+# COMMAND TO RUN
+# ansible-playbook -i inventory.ini -e ansible_user=ec2_user -e ansible_passowrd=DevOps321 filename.yaml

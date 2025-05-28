@@ -1,0 +1,44 @@
+- name: install nginx and run
+  become: yes #  becom yes means - sudo user 
+  hosts: frontend # it will read ip addresses values from invetory file , while running this file we nedd to give the file name 
+  tasks:
+  - name: install_nginx_server
+    ansible.builtin.package:
+      name: nginx
+      state: present
+
+- name: Start service nginx
+  ansible.builtin.service:
+    name: nginx
+    state: started # startin the service
+    enabled: yes # start the service
+
+- name: Stop service nginx, if started
+  ansible.builtin.service:
+    name: nginx
+    state: stopped
+
+- name: Restart service nginx, in all cases
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
+
+- name: Reload service nginx, in all cases
+  ansible.builtin.service:
+    name: nginx
+    state: reloaded
+
+- name: Enable service nginx, and not touch the state
+  ansible.builtin.service:
+    name: nginx
+    enabled: yes
+# - name: Restart service nginx, in all cases
+#   ansible.builtin.service:
+#     name: nginx
+#     state: absent  # uninstall the package
+
+
+
+
+# ansible-playbook -i inventory.ini -e ansible_user=ec2_user -e ansible_passowrd=DevOps321 filename.yaml
+    

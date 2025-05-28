@@ -1,0 +1,21 @@
+- name: play level varaible
+  hosts: local
+  connection: local
+  vars: 
+    COURSE: Ansible  # IN SHELL $VAR OR ${VAR} # IN ANSIBLE {{}} DOUBLE BRACES
+    DURATION: 10hrs
+    TRAINER: NARENDRA_L
+  tasks:
+  - name: print the Course Info
+    ansible.builtin.debug:
+    #VARS REFERENCE SHOULD BE SOURROUNDED BY ""
+      msg: "hello {{ COURSE}} ,Course {{ DURATION }} Trainer is {{ TRAINER }}"
+
+  - name: print the Course Info
+    ansible.builtin.debug:
+    #VARS REFERENCE SHOULD BE SOURROUNDED BY ""
+      msg: "hello {{ COURSE}} ,Course {{ DURATION }} Trainer is {{ TRAINER }}"  # 
+
+  
+  # This above example is play level -
+  # we can call varibles into any number of task levels 
