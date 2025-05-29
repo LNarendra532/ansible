@@ -1,9 +1,9 @@
 - name: loops using ansible
   become: yes
   hosts: frontend
-  tasks:  
-  - name: install pacakages
-    ansible.builtin.dnf:
+  tasks: 
+  - name: install_pacakages
+    ansible.builtin.pacakage:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
