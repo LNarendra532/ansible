@@ -7,31 +7,31 @@
       name: nginx
       state: present
 
-- name: Start service nginx
-  ansible.builtin.service:
-    name: nginx
-    state: started # startin the service
-    enabled: yes # start the service
+  - name: Start service nginx
+    ansible.builtin.service:
+      name: nginx
+      state: started # startin the service
+      enabled: yes # start the service
 
-- name: Stop service nginx, if started
-  ansible.builtin.service:
-    name: nginx
-    state: stopped
+  - name: Stop service nginx, if started
+    ansible.builtin.service:
+      name: nginx
+      state: stopped
 
-- name: Restart service nginx, in all cases
-  ansible.builtin.service:
-    name: nginx
-    state: restarted
+  - name: Restart service nginx, in all cases
+    ansible.builtin.service:
+      name: nginx
+      state: restarted
 
-- name: Reload service nginx, in all cases
-  ansible.builtin.service:
-    name: nginx
-    state: reloaded
+  - name: Reload service nginx, in all cases
+    ansible.builtin.service:
+      name: nginx
+      state: reloaded
 
-- name: Enable service nginx, and not touch the state
-  ansible.builtin.service:
-    name: nginx
-    enabled: yes
+  - name: Enable service nginx, and not touch the state
+    ansible.builtin.service:
+      name: nginx
+      enabled: yes
 # - name: Restart service nginx, in all cases
 #   ansible.builtin.service:
 #     name: nginx
