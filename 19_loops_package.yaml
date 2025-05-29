@@ -39,3 +39,5 @@
     - { name: 'nginx', state: 'absent'}
     - { name: 'mysql', state: 'absent'}
     - { name: 'zip', state: 'absent'}
+
+    #after - give one tab - insdie the dictionay maintained with spaces
