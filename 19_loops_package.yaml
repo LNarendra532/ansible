@@ -3,7 +3,7 @@
   hosts: frontend
   tasks:  
   - name: install pacakages
-    ansible.builtin.package:
+    ansible.builtin.dnf:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
