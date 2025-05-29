@@ -3,7 +3,7 @@
   connection: local
   tasks:
   - name: install pacakages
-    ansible.builtin.debug:
+    ansible.builtin.dnf:
       name: "{{ item }}"
       state: present
     loop:
