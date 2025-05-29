@@ -1,9 +1,9 @@
-- name: loops using ansible
+- name: installing package
   hosts: frontend
   become: yes
   tasks:
-  - name: install_pacakages
-    ansible.builtin.pacakage:
+  - name: installingggg
+    ansible.builtin.package:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
