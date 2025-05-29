@@ -24,14 +24,14 @@
     - { name: 'mysql', state: 'absent'}
     - { name: 'zip', state: 'absent'}
 
-# - name: install package
-#   hosts:  frontend
-#   become: yes
-#   tasks:
-#   - name: install-pacakages
-#     ansible.builtin.package:
-#       name: " {{  item.name }} "
-#       state: " {{  item.state  }} "
-#     loop:
-#     - { name: 'nginx', satate: 'present'  }
-#     - { name: 'zip', satate: 'present'  }
+- name: install package
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install-pacakages
+    ansible.builtin.package:
+      name: " {{  item.name }} "
+      state: " {{  item.state  }} "
+    loop:
+    - { name: 'nginx', satate: 'absent'  }
+    - { name: 'zip', satate: 'absent'  }
