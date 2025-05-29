@@ -6,21 +6,21 @@
     ansible.builtin.debug:
       msg: "Hellow from PLAY-1 and TASK-1"
 
-  # - name: Hello from play1 and task2
-  #   ansible.builtin.debug:
-  #     msg: "Hellow from PLAY-1 and TASK-2"
+  - name: Hello from play1 and task2
+    ansible.builtin.debug:
+      msg: "Hellow from PLAY-1 and TASK-2"
 
-  # - name: PLAY2
-  #   hosts: local
-  #   connection: local
-  #   tasks:
-  #   - name: Hello from paly2 and task-1
-  #     ansible.builtin.debug:
-  #       msg: "Hellow from PLAY-2 and TASK-1"
+  - name: PLAY2
+    hosts: local
+    connection: local
+    tasks:
+    - name: Hello from paly2 and task-1
+      ansible.builtin.debug:
+        msg: "Hellow from PLAY-2 and TASK-1"
 
-  #   - name: Hello from play2 and task2
-  #     ansible.builtin.debug:
-  #       msg: "Hellow from PLAY-2 and TASK-2"
+    - name: Hello from play2 and task2
+      ansible.builtin.debug:
+        msg: "Hellow from PLAY-2 and TASK-2"
 
   # - name: PLAY3
   #   hosts: local
