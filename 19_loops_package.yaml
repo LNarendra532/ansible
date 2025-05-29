@@ -25,7 +25,7 @@
     - { name: 'zip', state: 'absent'}
 
 - name: uninstall package
-  hosts:  frontend
+  hosts: frontend
   become: yes
   tasks:
   - name: uninstall pacakages
