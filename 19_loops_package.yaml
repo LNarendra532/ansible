@@ -1,7 +1,7 @@
 - name: loops using ansible
   become: yes
   hosts: frontend
-  tasks:
+  tasks:  
   - name: install pacakages
     ansible.builtin.package:
       name: "{{ item.name }}"
