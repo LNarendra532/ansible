@@ -1,43 +1,43 @@
-# - name: loops using ansible
+- name: loops using ansible
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install_pacakages
+    ansible.builtin.pacakage:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - { name: 'mysql', state: 'present' }
+    - { nmae: 'nginx', state: 'present' }
+    - { name: 'zip', state: 'present' }
+
+# - name: install packages
 #   hosts: frontend
 #   become: yes
-#   tasks: 
-#   - name: install_pacakages
-#     ansible.builtin.pacakage:
+#   tasks:
+#   - name: install packages
+#     ansible.builtin.package:
 #       name: "{{ item.name }}"
 #       state: "{{ item.state }}"
 #     loop:
-#     - { name: 'mysql', state: 'present' }
-#     - { nmae: 'nginx', state: 'present' }
-#     - { name: 'zip', state: 'present' }
+#     - { name: 'nginx', state: 'present'}
+#     - { name: 'mysql', state: 'absent'}
+#     - { name: 'zip', state: 'absent'}
 
-- name: install packages
-  hosts: frontend
-  become: yes
-  tasks:
-  - name: install packages
-    ansible.builtin.package:
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
-    loop:
-    - { name: 'nginx', state: 'present'}
-    - { name: 'mysql', state: 'absent'}
-    - { name: 'zip', state: 'absent'}
-
-- name: uninstall package
-  hosts: frontend
-  become: yes
-  tasks:
-  - name: install packages
-    ansible.builtin.package:
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
-    loop:
-    # - { name: 'nginx', state: 'absent'}
-    # - { name: 'mysql', state: 'absent'}
-    # - { name: 'zip', state: 'absent'}
-    - { name: 'nginx', state: 'absent'}
-    - { name: 'mysql', state: 'absent'}
-    - { name: 'zip', state: 'absent'}
+# - name: uninstall package
+#   hosts: frontend
+#   become: yes
+#   tasks:
+#   - name: install packages
+#     ansible.builtin.package:
+#       name: "{{ item.name }}"
+#       state: "{{ item.state }}"
+#     loop:
+#     # - { name: 'nginx', state: 'absent'}
+#     # - { name: 'mysql', state: 'absent'}
+#     # - { name: 'zip', state: 'absent'}
+#     - { name: 'nginx', state: 'absent'}
+#     - { name: 'mysql', state: 'absent'}
+#     - { name: 'zip', state: 'absent'}
 
     #after - give one tab - insdie the dictionay maintained with spaces
