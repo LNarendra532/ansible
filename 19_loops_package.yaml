@@ -1,15 +1,15 @@
-- name: loops using ansible
-  hosts: frontend
-  become: yes
-  tasks: 
-  - name: install_pacakages
-    ansible.builtin.pacakage:
-      name: "{{ item.name }}"
-      state: "{{ item.state }}"
-    loop:
-    - { name: 'mysql', state: 'present' }
-    - { nmae: 'nginx', state: 'present' }
-    - { name: 'zip', state: 'present' }
+# - name: loops using ansible
+#   hosts: frontend
+#   become: yes
+#   tasks: 
+#   - name: install_pacakages
+#     ansible.builtin.pacakage:
+#       name: "{{ item.name }}"
+#       state: "{{ item.state }}"
+#     loop:
+#     - { name: 'mysql', state: 'present' }
+#     - { nmae: 'nginx', state: 'present' }
+#     - { name: 'zip', state: 'present' }
 
 # - name: install packages
 #   hosts: frontend
@@ -23,3 +23,15 @@
 #     - { name: 'nginx', state: 'present'}
 #     - { name: 'mysql', state: 'absent'}
 #     - { name: 'zip', state: 'absent'}
+
+- name: install package
+  hosts:  frontend
+  become: yes
+  tasks:
+  - name: install_pacakages
+    ansible.builtin.pacakage:
+      name: {{item.name}}
+      state:  {{item.state}}
+    loop:
+    - {name: 'nginx', satate: 'present'}
+    - {name: 'zip', satate: 'present'}
