@@ -1,0 +1,21 @@
+- name: playbook control using ansible facts
+  hosts: frontend
+  become: yes
+  tasks:
+  - name: install nginx if os is RedHat
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family ==  "RedHat"    #os family names are case sensitive
+  
+
+  - name: install nginx if os is debain
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family ==  "Debian"
+    
+
+
+
+

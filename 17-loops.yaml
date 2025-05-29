@@ -1,0 +1,13 @@
+- name: loops using ansible
+  hosts: 
+  connection: local
+  tasks:
+  - name: loop the variables
+    ansible.builtin.debug:
+      msg: "  {{ item }} "  # reser keyword - item
+    loop:
+    - Narendra
+    - AWS
+    - Linux
+    - GIT
+    - GITHUB

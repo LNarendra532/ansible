@@ -1,0 +1,12 @@
+- name: loops using ansible
+  hosts: 
+  connection: local
+  tasks:
+  - name: install pacakages
+    ansible.builtin.debug:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
+    loop:
+    - {name: 'mysql' , state: 'present'}
+    - {nmae: 'nginx' , state: 'absent'}
+    - {name: 'zip' , state: 'absent'}
