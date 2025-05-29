@@ -1,5 +1,5 @@
 - name: loops using ansible
-  hosts: 
+  hosts: local
   connection: local
   tasks:
   - name: loop the variables
