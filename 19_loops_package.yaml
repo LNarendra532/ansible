@@ -30,8 +30,8 @@
   tasks:
   - name: install_pacakages
     ansible.builtin.pacakage:
-      name: {{item.name}}
-      state:  {{item.state}}
+      name: {{ item.name }}
+      state:  {{ item.state }}
     loop:
     - {name: 'nginx', satate: 'present'}
     - {name: 'zip', satate: 'present'}
