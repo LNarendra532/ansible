@@ -1,5 +1,6 @@
 - name: loops using ansible
-  hosts: 
+  hosts: local
+  become: yes
   connection: local
   tasks:
   - name: install pacakages
