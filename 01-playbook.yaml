@@ -1,5 +1,6 @@
 - name: ping the server # name is cutome name 
   hosts: frontend
-  tasks: #list of tasks
+  become: yes
+  tasks:
   - name: ping the server
     
