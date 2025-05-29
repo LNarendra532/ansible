@@ -1,9 +1,10 @@
 - name: loops using ansible
-  hosts: local
+  hosts: local  #host list cannot be emplty : local or need give server 
   connection: local
   tasks:
   - name: loop the variables
     ansible.builtin.debug:
+      msg: " {{}}"
       msg: "  {{ item }} "  # reser keyword - item
     loop:
     - Narendra
