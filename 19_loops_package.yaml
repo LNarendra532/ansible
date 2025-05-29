@@ -28,10 +28,11 @@
   hosts: frontend
   become: yes
   tasks:
-  - name: uninstall pacakages
+  - name: install packages
     ansible.builtin.package:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
-    - { name: 'nginx', satate: 'absent' }
-    - { name: 'zip', satate: 'absent' }
+    - { name: 'nginx', state: 'absent'}
+    - { name: 'mysql', state: 'absent'}
+    - { name: 'zip', state: 'absent'}
