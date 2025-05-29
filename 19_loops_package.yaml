@@ -4,7 +4,7 @@
   connection: local
   tasks:
   - name: install pacakages
-    ansible.builtin.debug:
+    ansible.builtin.package:
       name: "{{ item.name }}"
       state: "{{ item.state }}"
     loop:
