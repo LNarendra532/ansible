@@ -1,7 +1,6 @@
 - name: loops using ansible
   become: yes
-  hosts: local
-  connection: local
+  hosts: frontend
   tasks:
   - name: install pacakages
     ansible.builtin.package:
