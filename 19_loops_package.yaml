@@ -28,7 +28,7 @@
   hosts:  frontend
   become: yes
   tasks:
-  - name: install_pacakages
+  - name: install-pacakages
     ansible.builtin.pacakage:
       name: " {{  item.name }} "
       state: " {{  item.state  }} "
