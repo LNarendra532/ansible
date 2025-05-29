@@ -2,7 +2,7 @@
   hosts: frontend
   become: yes
   tasks:
-  - name: ping to the server
-    name: Example from an Ansible Playbook
+  #- name: ping to the server
+  - name: Example from an Ansible Playbook
     ansible.builtin.ping:
     
