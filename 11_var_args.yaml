@@ -7,4 +7,4 @@
       msg: "Hello I am learning {{ COURSE }}, Duration: {{ DURATION }}, Trainer is: {{ TRAINER }}"
 
 #How to pass varible in command line  
-#ansible-playbook -i inventory.ini filename.yaml -e ansible_user=ec2_user -e "COURSE=commnd_ARGS "DURATION=10hrs" -e "TRAINER=Narendra-L"
+#ansible-playbook -i inventory.ini -e ansible_user=ec2-user  ansible_password=DevOps321 -e "COURUSE=AWS" -e "DURATION=10HRS" -e "TRAINER=NARENDRA_l" 11_var_args.yaml
