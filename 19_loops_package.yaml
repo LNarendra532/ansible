@@ -1,6 +1,6 @@
 - name: loops using ansible
-  become: yes
   hosts: frontend
+  become: yes
   tasks: 
   - name: install_pacakages
     ansible.builtin.pacakage:
